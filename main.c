@@ -20,7 +20,7 @@ int main() {
   
   int i;
   
-  for ( i = 10; i < 350; i += 5 )
+  for ( i = 0; i < 350; i += 5 )
     draw_line(50, 0, 400, i, s, c);
   
   //draw_line(50, 0, 400, 200, s, c);
