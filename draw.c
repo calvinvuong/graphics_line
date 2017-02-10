@@ -7,5 +7,33 @@
 
 //Insert your line algorithm here
 void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
+  // set constants
+  int A = y0 - y1;
+  int B = x0 - x1;
+  int x = x0;
+  int y = y0;
+
+  int d = 2*A + B;
+  while ( x <= x1 ) {
+    plot(s, c, x, y);
+    if ( d > 0 ) { // line above midpoint
+      y++;
+      d += 2 * B;
+    }
+    x++;
+    d += 2 * A;
+  }
 }
+
+/*PSUEDOCODE
+x = x0; y = y0
+d = 2A + B
+while ( x < x1 )
+   plot(x,y)
+   if ( d > 0 )
+      y++
+      d += 2B
+   x++
+   d += 2A
+*/
 

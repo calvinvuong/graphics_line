@@ -18,6 +18,8 @@ int main() {
   
   clear_screen(s);
 
+  draw_line(50, 350, 400, 300, s, c);
+  //  save_ppm( s, "image.ppm");
 
   display(s);
   save_extension(s, "lines.png");
