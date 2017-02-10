@@ -17,9 +17,14 @@ int main() {
   c.blue = 0;
   
   clear_screen(s);
-
-  draw_line(50, 350, 400, 300, s, c);
-  //  save_ppm( s, "image.ppm");
+  
+  int i;
+  
+  for ( i = 10; i < 350; i += 5 )
+    draw_line(50, 0, 400, i, s, c);
+  
+  //draw_line(50, 0, 400, 200, s, c);
+  //save_ppm( s, "image.ppm");
 
   display(s);
   save_extension(s, "lines.png");
