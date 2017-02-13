@@ -20,9 +20,10 @@ int main() {
   
   int i;
   
-  for ( i = 0; i < 350; i += 5 )
-    draw_line(50, 0, 400, i, s, c);
-  
+  //  for ( i = 0; i < 350; i += 5 )
+  //  draw_line(50, 0, 400, i, s, c);
+
+  draw_line(50, 25, 300, 10, s, c);
   //draw_line(50, 0, 400, 200, s, c);
   //save_ppm( s, "image.ppm");
 

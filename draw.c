@@ -13,16 +13,31 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
   int x = x0;
   int y = y0;
 
-  int d = 2*A + B;
-  while ( x <= x1 ) {
-    plot(s, c, x, y);
-    if ( d > 0 ) { // line above midpoint
-      y++;
-      d += 2 * B;
+  if ( A > 0 && B < 0 && ( -1*B > A ) ) { // octant 1
+    int d = 2*A + B;
+    while ( x <= x1 ) {
+      plot(s, c, x, y);
+      if ( d > 0 ) { // line above midpoint
+	y++;
+	d += 2 * B;
+      }
+      x++;
+      d += 2 * A;
     }
-    x++;
-    d += 2 * A;
   }
+  else if ( A > 0 && B < 0 && ( -1*B < A ) ) { // octant 2
+    int d = 2*A - B;
+    while ( x <= x1 ) {
+      plot(s, c, x, y);
+      if ( d < 0 ) {
+	y--;
+	d -= 2 * B;
+      }
+      x++;
+      d += 2 * A;
+    }
+  }
+  else if (
 }
 
 /*PSUEDOCODE
