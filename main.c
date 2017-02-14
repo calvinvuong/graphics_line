@@ -20,19 +20,19 @@ int main() {
   
   int i;
   
-  //  for ( i = 0; i < 350; i += 5 )
-  //  draw_line(50, 0, 400, i, s, c);
-
   draw_line(50, 10, 300, 25, s, c); // oct1
   draw_line(50, 25, 300, 10, s, c); // oct8
 
   draw_line(50, 100, 100, 300, s, c); // oct2
-  draw_line(50, 100, 100, 25, s, c); // oct7
+  draw_line(50, 300, 100, 10, s, c); // oct7
+
+  draw_line(300, 10, 250, 150, s, c); // oct3
+  draw_line(350, 50, 100, 100, s, c); // oct4
+
+  draw_line(450, 300, 100, 200, s, c); // oct5
+  draw_line(400, 400, 300, 50, s, c); // oct6
 
   
-  //draw_line(50, 0, 400, 200, s, c);
-  //save_ppm( s, "image.ppm");
-
   display(s);
   save_extension(s, "lines.png");
 }  
