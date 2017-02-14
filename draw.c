@@ -13,31 +13,56 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
   int x = x0;
   int y = y0;
 
-  if ( A > 0 && B < 0 && ( -1*B > A ) ) { // octant 1
-    int d = 2*A + B;
-    while ( x <= x1 ) {
-      plot(s, c, x, y);
-      if ( d > 0 ) { // line above midpoint
+  if ( B < 0 ) { // octants 1,2,7,8
+    if ( !((A > 0) != (B < 0)) && ( -1*B > A ) ) { // octant 1
+      int d = 2*A + B;
+      while ( x <= x1 ) {
+	plot(s, c, x, y);
+	if ( d > 0 ) { // line above midpoint
+	  y++;
+	  d += 2 * B;
+	}
+	x++;
+	d += 2 * A;
+      }
+    }
+    else if ( !((A > 0) != (B < 0)) && ( -1*B < A ) ) { // octant 2
+      int d = 2*B + A;
+      while ( y <= y1 ) {
+	plot(s, c, x, y);
+	if ( d < 0 ) {
+	  x++;
+	  d += 2 * A;
+	}
 	y++;
 	d += 2 * B;
       }
-      x++;
-      d += 2 * A;
     }
-  }
-  else if ( A > 0 && B < 0 && ( -1*B < A ) ) { // octant 2
-    int d = 2*A - B;
-    while ( x <= x1 ) {
-      plot(s, c, x, y);
-      if ( d < 0 ) {
+    else if ( ((A > 0) != (B < 0)) && ( B > A ) ) { // octant 7
+      int d = A - 2*B;
+      while ( y >= y1 ) {
+	plot(s, c, x, y);
+	if ( d > 0 ) {
+	  x++;
+	  d += 2*A;
+	}
 	y--;
-	d -= 2 * B;
+	d -= 2*B;
       }
-      x++;
-      d += 2 * A;
+    }
+    else if ( ((A > 0) != (B < 0)) && ( B < A ) ) { // octant 8
+      int d = 2*A - B;
+      while ( x <= x1 ) {
+	plot(s, c, x, y);
+	if ( d < 0 ) {
+	  y--;
+	  d -= 2 * B;
+	}
+	x++;
+	d += 2 * A;
+      }
     }
   }
-  else if (
 }
 
 /*PSUEDOCODE

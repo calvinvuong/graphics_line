@@ -23,7 +23,13 @@ int main() {
   //  for ( i = 0; i < 350; i += 5 )
   //  draw_line(50, 0, 400, i, s, c);
 
-  draw_line(50, 25, 300, 10, s, c);
+  draw_line(50, 10, 300, 25, s, c); // oct1
+  draw_line(50, 25, 300, 10, s, c); // oct8
+
+  draw_line(50, 100, 100, 300, s, c); // oct2
+  draw_line(50, 100, 100, 25, s, c); // oct7
+
+  
   //draw_line(50, 0, 400, 200, s, c);
   //save_ppm( s, "image.ppm");
 
