@@ -19,6 +19,10 @@ int main() {
   clear_screen(s);
   
   int i;
+
+  draw_line(50, 100, 100, 100, s, c); // horiz
+
+  draw_line(100, 300, 100, 500, s, c); // vert
   
   draw_line(50, 10, 300, 25, s, c); // oct1
   draw_line(50, 25, 300, 10, s, c); // oct8
