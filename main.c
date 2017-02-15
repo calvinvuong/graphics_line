@@ -17,9 +17,27 @@ int main() {
   c.blue = 0;
   
   clear_screen(s);
-  
-  int i;
 
+  int i, k;
+  int x0 = 0;
+  int y0 = 0;
+  int x1 = 0;
+  int y1 = 0;
+  int x_increment = XRES/5;
+  int y_increment = YRES/5;
+
+  for ( x0 = 0; (x0) <= XRES; x0 += x_increment ) {
+    for ( y0 = 0; ( y0 ) <= YRES; y0 += y_increment) {
+      for ( x1 = 0; (x1 ) <= XRES; x1 += x_increment ) {
+	for ( y1 = 0; ( y1) <= YRES; y1 += y_increment) {
+	  draw_line(x0, y0, x1, y1, s, c);
+	}
+      }
+    }
+  }
+  draw_line(0, 500, 500, 500, s, c);
+  draw_line(500, 500, 500, 0, s, c);
+  /*
   draw_line(50, 100, 100, 100, s, c); // horiz
 
   draw_line(100, 300, 100, 500, s, c); // vert
@@ -35,7 +53,7 @@ int main() {
 
   draw_line(450, 300, 100, 200, s, c); // oct5
   draw_line(400, 400, 300, 50, s, c); // oct6
-
+  */
   
   display(s);
   save_extension(s, "lines.png");
