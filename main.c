@@ -10,17 +10,18 @@ int main() {
 
   screen s;
   color c;
- 
+
+  clear_screen(s);
+  
   c.red = 173;
   c.green = 58;
   c.blue = 234;
   
-  clear_screen(s);
-
   int x0, x1, y0, y1;
   int x_increment = XRES/5;
   int y_increment = YRES/5;
 
+  // slopes of all octants represented below, including 1, -1, 0, and undefined
   for ( x0 = 50; x0 < XRES; x0 += x_increment ) {
     for ( y0 = 50; y0 < YRES; y0 += y_increment) {
       for ( x1 = 50; x1 < XRES; x1 += x_increment ) {
@@ -30,7 +31,7 @@ int main() {
       }
     }
   }
-    
+  
   display(s);
   save_extension(s, "lines.png");
 }  
